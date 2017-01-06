@@ -91,12 +91,12 @@ function go(){
   drawnItems = new L.FeatureGroup();
   map.addLayer(drawnItems);
   poly = new L.Draw.Polyline(map, {
-      allowIntersection: true,
-      showArea: false,
-      drawError: {
-      color: '#b00b00',
-      timeout: 1000
-    },
+    //   allowIntersection: true,
+    //   showArea: false,
+    //   drawError: {
+    //   color: '#b00b00',
+    //   timeout: 1000
+    // },
     // icon: new L.DivIcon({
     //   iconSize: new L.Point(10,10),
     //   className: 'leaflet-div-icon leaflet-editing-icon'
