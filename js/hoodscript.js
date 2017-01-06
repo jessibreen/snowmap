@@ -90,7 +90,7 @@ function go(){
   //draw controls
   drawnItems = new L.FeatureGroup();
   map.addLayer(drawnItems);
-  poly = new L.Draw.multiPolyline(map, {
+  poly = new L.Draw.Polyline(map, {
       allowIntersection: true,
       showArea: false,
       drawError: {
@@ -113,7 +113,7 @@ function go(){
     },
     guidelineDistance: 5,
   })
-  // poly = new L.Draw.Polygon(map, {
+  // poly = new L.Draw.polyline(map, {
   //     allowIntersection: false,
   //     showArea: false,
   //     drawError: {
@@ -138,7 +138,7 @@ function go(){
   // })
   
   
-  // Set the title to show on the polygon button
+  // Set the title to show on the polyline button
     L.drawLocal.draw.toolbar.buttons.polyline = 'Draw a line!';
 
     var drawControl = new L.Control.Draw({
@@ -231,7 +231,7 @@ function go(){
     $('#submitPolyBtn').hide();
   });
   $("#submitPolyBtn").click(function(e){
-  //CHECK IF POLYGON IS COMPLETE
+  //CHECK IF polyline IS COMPLETE
     if(drawnItems.getLayers().length<1){bootstrap_alert.warning('Oops, you need to map something first.'); }
     //ELSE OPEN THE SUBMIT DIALOGUE
     else{
@@ -322,7 +322,7 @@ var loadHoods = function(){
     type: 'cartodb',
     cartodb_logo: false,
     query: "SELECT * FROM "+tblName+" where flag = false",
-    tile_style:'#'+tblName+' {line-opacity:.8;line-color: #cd0000;line-width:1;polygon-fill:#fff;polygon-opacity:0.1;}::accent{image-filters: agg-stack-blur(3,3);line-opacity:.2;line-color: #cd0000;line-join:round;polygon-opacity:.01;[zoom=2] { line-width: 4; } [zoom=3] { line-width: 6; } [zoom=4] { line-width: 8; } [zoom>5] { line-width: 10; }}',
+    tile_style:'#'+tblName+' {line-opacity:.8;line-color: #cd0000;line-width:1;polyline-fill:#fff;polyline-opacity:0.1;}::accent{image-filters: agg-stack-blur(3,3);line-opacity:.2;line-color: #cd0000;line-join:round;polyline-opacity:.01;[zoom=2] { line-width: 4; } [zoom=3] { line-width: 6; } [zoom=4] { line-width: 8; } [zoom>5] { line-width: 10; }}',
     interactivity: 'cartodb_id,name, description',
     featureClick: function(ev, latlng, pos, data){hoodClickHandler(ev, latlng, pos, data)},
     featureOver: function(ev, latlng, pos, data){hoodOverHandler(ev, latlng, pos, data)},
@@ -451,8 +451,8 @@ var getNewHoods = function (arr){//takes array of neighborhood names, gets and d
           resizeHandler();
           for (var n = 0;n<count;n++){
               var geom = data.rows[i].the_geom[n];
-              var polygons = jQuery.parseJSON(geom);
-              var lyr = L.geoJson(polygons, {
+              var polylines = jQuery.parseJSON(geom);
+              var lyr = L.geoJson(polylines, {
                   style: nStyle
               });
               data.rows[i].layers.push(lyr);
