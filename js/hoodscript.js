@@ -106,9 +106,9 @@ function go(){
       color: '#ff0000',
       weight: 1,
       opacity: 0.7,
-      fill: true,
-      fillColor: null, //same as color by default
-      fillOpacity: 0.2,
+      // fill: true,
+      // fillColor: null, //same as color by default
+      // fillOpacity: 0.2,
       clickable: true
     },
     guidelineDistance: 5,
