@@ -90,8 +90,8 @@ function go(){
   //draw controls
   drawnItems = new L.FeatureGroup();
   map.addLayer(drawnItems);
-  poly = new L.Draw.Polyline(map, {
-      allowIntersection: false,
+  poly = new L.Draw.polyline(map, {
+      allowIntersection: true,
       showArea: false,
       drawError: {
       color: '#b00b00',
@@ -106,13 +106,36 @@ function go(){
       color: '#ff0000',
       weight: 1,
       opacity: 0.7,
-      // fill: true,
-      // fillColor: null, //same as color by default
-      // fillOpacity: 0.2,
+      fill: true,
+      fillColor: null, //same as color by default
+      fillOpacity: 0.2,
       clickable: true
     },
     guidelineDistance: 5,
   })
+  // poly = new L.Draw.Polygon(map, {
+  //     allowIntersection: false,
+  //     showArea: false,
+  //     drawError: {
+  //     color: '#b00b00',
+  //     timeout: 1000
+  //   },
+  //   icon: new L.DivIcon({
+  //     iconSize: new L.Point(10,10),
+  //     className: 'leaflet-div-icon leaflet-editing-icon'
+  //   }),
+  //   shapeOptions: {
+  //     stroke: true,
+  //     color: '#ff0000',
+  //     weight: 1,
+  //     opacity: 0.7,
+  //     fill: true,
+  //     fillColor: null, //same as color by default
+  //     fillOpacity: 0.2,
+  //     clickable: true
+  //   },
+  //   guidelineDistance: 5,
+  // })
   
   
   // Set the title to show on the polygon button
