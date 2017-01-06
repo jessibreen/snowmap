@@ -90,7 +90,7 @@ function go(){
   //draw controls
   drawnItems = new L.FeatureGroup();
   map.addLayer(drawnItems);
-  poly = new L.Draw.Multipolyline(map, {
+  poly = new L.Draw.MultiPolyline(map, {
       allowIntersection: true,
       showArea: false,
       drawError: {
