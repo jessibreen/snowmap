@@ -97,10 +97,10 @@ function go(){
       color: '#b00b00',
       timeout: 1000
     },
-    icon: new L.DivIcon({
-      iconSize: new L.Point(10,10),
-      className: 'leaflet-div-icon leaflet-editing-icon'
-    }),
+    // icon: new L.DivIcon({
+    //   iconSize: new L.Point(10,10),
+    //   className: 'leaflet-div-icon leaflet-editing-icon'
+    // }),
     shapeOptions: {
       stroke: true,
       color: '#ff0000',
@@ -139,7 +139,7 @@ function go(){
   
   
   // Set the title to show on the polygon button
-    L.drawLocal.draw.toolbar.buttons.polygon = 'Draw a line!';
+    L.drawLocal.draw.toolbar.buttons.polyline = 'Draw a line!';
 
     var drawControl = new L.Control.Draw({
       position: 'topright',
