@@ -278,11 +278,11 @@ function go(){
           var lat = (a[i].lat);//.toFixed(4); // rid of rounding that was there for url length issue during dev
           var lng = (a[i].lng);//.toFixed(4); // rid of rounding that was there for url length issue during dev
           coords += '['+lng + ',' + lat+'],';
-        if(i==a.length-1){
-          var lat = (a[0].lat).toFixed(4);
-            var lng = (a[0].lng).toFixed(4);
-          coords += '['+lng + ',' + lat+']';
-        }
+        // if(i==a.length-1){
+        //   var lat = (a[0].lat).toFixed(4);
+        //     var lng = (a[0].lng).toFixed(4);
+        //   coords += '['+lng + ',' + lat+']';
+        // }
       }
       postData( "php/add.php",{
         table: tblName,
