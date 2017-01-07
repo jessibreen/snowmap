@@ -30,7 +30,7 @@ $_POST['timeStamp'] = "1483801325811";
 
 $q = "INSERT INTO " . $_POST['table'] . " (the_geom, city, description, name,city_yrs,nbrhd_yrs,flag,loved) VALUES (ST_SetSRID(ST_GeomFromGeoJSON('";
 if ( $_POST['ext'] != "_point" ){
-  $q .= '{"type":"LineString","coordinates":[[[' . $_POST['coords'] . "]]]}'";
+  $q .= '{"type":"LineString","coordinates":[' . $_POST['coords'] . "]}'";
 } else {
   $q .= '{"type":"Point","coordinates":' . $_POST['coords'] . "}'";
 }
