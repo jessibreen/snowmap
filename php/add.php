@@ -14,17 +14,16 @@ include '/var/www/cartodbProxy.php';
 // hoodYears:1
 // cache:false
 // timeStamp:1483801325811
-
-$_POST['table'] = "cartodb_snow";
-$_POST['ext'] = "";
-$_POST['coords'] = "[-84.61395263671875,38.043765107439675],[-84.46357727050781,38.07133872299575],[-84.35234069824217,37.97451499202459],[-84.32762145996094,38.004819966413194],[-84.6140,38.0438]";
-$_POST['city'] = "Lexington";
-$_POST['description'] = "kdfghakjsdhf";
-$_POST['name'] = "foo";
-$_POST['cityYears'] = "1";
-$_POST['hoodYears'] = "1";
-$_POST['cache'] = "false";
-$_POST['timeStamp'] = "1483801325811";
+// $_POST['table'] = "cartodb_snow";
+// $_POST['ext'] = "";
+// $_POST['coords'] = "[-84.61395263671875,38.043765107439675],[-84.46357727050781,38.07133872299575],[-84.35234069824217,37.97451499202459],[-84.32762145996094,38.004819966413194],[-84.6140,38.0438]";
+// $_POST['city'] = "Lexington";
+// $_POST['description'] = "kdfghakjsdhf";
+// $_POST['name'] = "foo";
+// $_POST['cityYears'] = "1";
+// $_POST['hoodYears'] = "1";
+// $_POST['cache'] = "false";
+// $_POST['timeStamp'] = "1483801325811";
 
 
 
@@ -36,7 +35,6 @@ if ( $_POST['ext'] != "_point" ){
 }
 $q .= "),4326),'". $_POST['city'] ."','" . $_POST['description'] . "','" . $_POST['name'] . "','" . $_POST['cityYears'] . "','" . $_POST['hoodYears'] . "','false','0')";
 
-print $q . "<br/>";
 $return = goProxy($q);
 echo $return;
 ?>
