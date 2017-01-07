@@ -322,7 +322,7 @@ var loadHoods = function(){
     type: 'cartodb',
     cartodb_logo: false,
     query: "SELECT * FROM "+tblName+" where flag = false",
-    tile_style:'#'+tblName+' {line-opacity:.8;line-color: #cd0000;line-width:1;polyline-fill:#fff;polyline-opacity:0.1;}::accent{image-filters: agg-stack-blur(3,3);line-opacity:.2;line-color: #cd0000;line-join:round;polyline-opacity:.01;[zoom=2] { line-width: 4; } [zoom=3] { line-width: 6; } [zoom=4] { line-width: 8; } [zoom>5] { line-width: 10; }}',
+    tile_style:'#'+tblName+' {line-opacity:.8;line-color: #cd0000;line-width:1;}::accent{image-filters: agg-stack-blur(3,3);line-opacity:.2;line-color: #cd0000;line-join:round;[zoom=2] { line-width: 4; } [zoom=3] { line-width: 6; } [zoom=4] { line-width: 8; } [zoom>5] { line-width: 10; }}',
     interactivity: 'cartodb_id,name, description',
     featureClick: function(ev, latlng, pos, data){hoodClickHandler(ev, latlng, pos, data)},
     featureOver: function(ev, latlng, pos, data){hoodOverHandler(ev, latlng, pos, data)},
